@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    color: #222;
+    background-color: #333;
+    margin: 0;
+} 
+
+.container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px; 
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px; 
+    left: -100px;
+    
+}
+
+.circle {
+    /* position: fixed; */
+    background-color: rgb(96, 96, 243);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform .5s linear;
+}
+
+.circle.on {
+    transform: rotate(-70deg);
+}
+
+.circle button {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    height: 100px;
+    background: transparent ;
+    border:0;
+    font-size: 26px;
+    color: white;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+.circle button#close {
+    top: 60%; 
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left:0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+.container.show-nav + nav ul li {
+    transform: translateX(0);
+    transition-delay: 0.3s ;
+}
+
+nav ul li {
+    color:white; 
+    margin: 30px 0;
+    transition: transform 1s ease;
+    transform: translateX(-200%);
+}
+
+nav ul li + li {
+    margin-left: 15px;
+}
+nav ul li + li + li {
+    margin-left: 30px;
+}
+
+nav ul li i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+
+
+.content img {
+    max-width: 100%;
+}
+
+.content {
+    margin: 50px auto; 
+    max-width: 1000px;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content small {
+    font-style: italic;
+    color: #555;
+}
+
+.content p {
+    line-height: 1.5;
+    color: #333;
+}
